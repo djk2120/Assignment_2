@@ -1,15 +1,27 @@
+Assignment 2
+Research Computing in Earth Sciences
+
+Daniel Kennedy
+djk2120@columbia.edu
+September 12, 2017
+
+------------------------------------
+
 (1)
 How many earthquakes are listed in the table?
+
 5958
 tail +2 signif.txt.tsv | wc -l
 
 (2)
 How many columns are in the table?
+
 47
 head -n 1 signif.txt.tsv | wc -w
 
 (3)
 Use the cut command to create a new file that just has the data from the columns for YEAR, EQ_PRIMARY and COUNTRY. Hint: you can get the column numbers by using the head command to view the first row and then visually count the column numbers for the above fields (there is also a unix command to do this, but we didn't cover it in class). Call the new data file 'Year_Mag_Country.tsv'. You can use 'Year_Mag_Country.tsv' for the rest of the exercises below.
+
 cut -f 3,10,18 signif.txt.tsv > Year_Mag_Country.tsv
 
 
@@ -29,12 +41,10 @@ sort -nrk 2 Year_Mag_Country.tsv | head
 1716	 8.8	PERU
 1965	 8.7	USA
 
-
 (5)
 How many unique countries are listed in the database? Use cut,sort,uniq, wc and a few pipes | to form a single expression that answers this question.
 
 cut -f 3 Year_Mag_Country.tsv | tail +2 | sort | uniq | wc -l
-
 153
 
 (6)
@@ -53,7 +63,6 @@ grep USA Year_Mag_Country.tsv | grep -v TERR | wc -l
 Compute the total number of earthquakes in each country and then display the top ten countries along with the number of earthquakes. Hint: this can be done with a command sequence similar to exercise 5, but requires a specific argument to be used with uniq.
 
 tail +1 Year_Mag_Country.tsv | cut -f 3 | sort | uniq -c | sort -rn | head
-
  579 CHINA
  400 JAPAN
  365 IRAN
@@ -68,11 +77,11 @@ tail +1 Year_Mag_Country.tsv | cut -f 3 | sort | uniq -c | sort -rn | head
 (9)
 Create a shell script named countEq.sh that returns the total number of earthquakes for a given country, where the country is specified as the option when calling the script. Hint: see the Shell Script notes and use the special variable $1. Paste your script below and give an example calling sequence for country USA.
 
-n=`tail +1 Year_Mag_Country.tsv |  grep -i $1 | wc -l`
-echo 'earthquakes in' $1 ':' $n
+n=`tail +2 Year_Mag_Country.tsv |  grep -i $1 | wc -l`
+echo earthquakes 'in' $1: $n
 
 ./countEq.sh USA
-earthquakes in USA : 294
+earthquakes in USA: 294
 
 note: this includes usa territories
 
@@ -80,21 +89,40 @@ note: this includes usa territories
 Create a shell script named countEq_getLargestEq.sh that returns both the total number of earthquakes AND the largest earthquake for a given country, where the country is specified as the option when calling the script. Use the echo command before each command to create labels for each returned value. Paste your script below and give an example calling sequence for country CHILE.
 
 n=`tail +1 Year_Mag_Country.tsv |  grep -i $1 | wc -l`
-mag=`tail +1 Year_Mag_Country.tsv | grep -i $1 | cut -f 2 | sort -rn | head -n 1`
-echo 'earthquakes in' $1 ':' $n
-echo 'largest magnitude :'
+mag=`tail +1 Year_Mag_Country.tsv | grep -i $1 | sort -rnk 2 | head -n 1 | cut -f 2`
+yr=`tail +1 Year_Mag_Country.tsv | grep -i $1 | sort -rnk 2 | head -n 1 | cut -f 1`
+echo earthquakes in $1: $n
+echo largest magnitude: $mag 'in' $yr
 
 ./countEq_getLargestEq.sh Chile
-earthquakes in Chile : 192
-largest magnitude : 9.5
+earthquakes in Chile: 192
+largest magnitude: 9.5 in 1960
 
 (11)
 Compute the total number of large earthquakes in all countries and then output a sorted list of the top ten years with the most earthquakes. Paste your command and the top ten list below.
 
+tail +2 Year_Mag_Country.tsv | cut -f 1 | uniq -c | sort -nr | head
 
+  78 2004
+  77 2008
+  72 2003
+  67 2007
+  62 2010
+  61 2006
+  60 2009
+  60 2005
+  60 2002
+  59 2011
 
 (12)
 Create a shell script that loops over the top ten years with the most earthquakes (from exercise 11), finds all the earthquakes for a given year and writes them to file named $YEAR-earthquakes.txt, where $YEAR is the for loop variable assigned from the top ten list. You code should output ten different files (one for each year in the top ten list). Hints: Take your answer from exercise 11 and extract the year column, then use this for the range in a for loop by inserting them like this for YEAR in $(insert code that lists top ten years here). The rest is just a grep and a redirect > to a file with the correct name.
+
+years=`tail +2 Year_Mag_Country.tsv | cut -f 1 | uniq -c | sort -nr | head | cut -d ' ' -f 4`
+for year in $years
+do
+    echo `head -n 1 Year_Mag_Country.tsv` > $year-earthquakes.txt
+    grep $year Year_Mag_Country.tsv >> $year-earthquakes.txt
+done
 
 (13)
 Turn in your homework by sharing it with us on a GitHub repository. Instructions: on GitHub, create a private git repository called Assignment_2. Share this repository with users kerrykey and rabernat. Clone the repository to your laptop. Save your answers to the exercises above in a text file called answers.txt. Use git to commit answers.txt to your repository on your laptop, and then push the changes to the remote repository on GitHub.
