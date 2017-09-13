@@ -62,7 +62,7 @@ grep USA Year_Mag_Country.tsv | grep -v TERR | wc -l
 (8)
 Compute the total number of earthquakes in each country and then display the top ten countries along with the number of earthquakes. Hint: this can be done with a command sequence similar to exercise 5, but requires a specific argument to be used with uniq.
 
-tail +1 Year_Mag_Country.tsv | cut -f 3 | sort | uniq -c | sort -rn | head
+tail +2 Year_Mag_Country.tsv | cut -f 3 | sort | uniq -c | sort -rn | head
  579 CHINA
  400 JAPAN
  365 IRAN
