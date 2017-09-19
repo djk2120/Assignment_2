@@ -2,3 +2,4 @@
 *.tsv
 *~
 20*
+.ipynb_checkpoints
