@@ -1,0 +1,56 @@
+Assigment 5
+Research Computing
+October 5, 2017
+Daniel Kennedy ~ djk2120
+
+1a)
+A,B, and C all have the same size, nxn. Assuming 8-byte entries, you need 3*8*n^2*1e-06 Mb of memory to store the three matrices.
+(Defining 1Mb = 10^6 bytes)
+
+1b)
+It takes n multiplication operations and n-1 addition operations to compute a single entry of C.
+
+1c)
+C = zero
+do k=1,n
+   C(i,j) += A(i,k)*B(k,j)
+enddo
+
+1d)
+C(i,j) = sum(A(i,:)*B(:,j))
+
+1e)
+do i=1,n
+   do j=1,n
+      C(i,j) = sum(A(i,:)*B(:,j))
+   enddo
+enddo
+
+1f)
+It takes 2n-1 operations per entry of C, and there are n^2 entries of C.
+So it takes 2n^3 - n^2 floating point operations to compute the matrix multiplication.
+(Clearly there are also read/write operations)
+
+1g)
+O(N^3)
+
+1h)
+n=1	t0
+n=10	10^3t0
+n=100	10^6t0
+n=1000	10^9t0
+
+1i)
+n
+
+3c)
+On my machine, the n=1000 matrix multiplication took about 7 seconds.
+The matrix multiplication is O(n^3). So every 10x in size is 1000x in floating point operations.
+So you would estimate that (barring bad I/O scaling),
+    n = 10,000 would take 7,000 seconds (~2hrs)
+    n = 100,000 would take 7,000,000 seconds (~81days)
+
+The RAM necessary for storing the three matrices is 3*8*n^2*1e-06 Mb
+    n = 10^4 would require 3*8*10^4^2*1e-06 = 24*10^2 = 2.4 Gb
+    n = 10^5 would require 3*8*10^5^2*1e-06 = 24*10^4 = 240 Gb
+
