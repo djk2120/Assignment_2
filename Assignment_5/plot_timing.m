@@ -23,7 +23,7 @@ G = [ones(3,1),log(n)];
 d = log(t);
 m = (G'*G)\(G'*d);
 
-% plot linear model
+% plot model
 hold on
 loglog(n,exp(G*m),'b-')
 
