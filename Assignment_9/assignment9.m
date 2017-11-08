@@ -29,7 +29,3 @@ ylabel('Slope (degrees)')
 xlim([-1 325])
 
 print('AASZ_topo_slope','-dpdf')
-
-
-
-a = ncinfo('us.nc');
