@@ -1,0 +1,25 @@
+
+Daniel Kennedy
+November 8, 2017
+Research Computing final project proposal
+----------------
+
+Earth System Model parameter sensitivity experiment
+
+
+In my research I work on vegetation representation in Earth System Models. I developed and implemented a model for vegetation water use in the Community Land Model, which is the land component of NCAR's Community Earth System Model.
+
+For my final project I would like to select a few parameters from the land model and perform a sensitivity experiment. This has the potential for utilizing several of the tools from this course, including shell scripting, data management, file management, and data analysis/visualization.
+
+I think this project will yield a very typical geoscientific computing workflow, with great benefits from organized, reproducible scripting. More specifically I'll have to run an ensemble of simulations, which involves 
+
+1) change parameter value in parameter file (matlab or python)
+2) set up and run simulations (unix)
+3) collect output from all ensemble members and analyze (matlab or python)
+
+The data visualization could be pretty interesting, especially if I grid sample a multi-dimensional parameter space. 
+
+The downside is that part of this workflow is outside of what could be duplicated upon submission. So maybe I can just show the scripts I use to run the simulations and then supply all the model output.
+
+Thanks,
+Daniel
