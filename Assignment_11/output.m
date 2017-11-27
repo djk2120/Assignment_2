@@ -31,7 +31,7 @@ y = 10.^(polyval(m,log10(x)));
 
 % plot data
 xdk = figure;
-loglog(data(:,1),data(:,2),'.','MarkerSize',25)
+loglog(data(:,1),data(:,2),'.','MarkerSize',15)
 hold on
 loglog(x,y,'r:')
 xlim(10.^[-0.1,2.1])
@@ -42,5 +42,5 @@ title('Habanero test: n = 10^8')
 
 %write image file
 xdk.Units         = 'inches';
-xdk.PaperPosition = [1 6.5 5 5];
+xdk.PaperPosition = [1 6 4 3.9];
 print(xdk,'output','-dpdf')
