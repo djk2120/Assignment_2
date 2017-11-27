@@ -1,0 +1,104 @@
+ Number of processors:  1
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755604192
+ Elapsed time:  47.0321539840661
+ Number of processors:  2
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755638139
+ Elapsed time:  23.887097352999263
+ Number of processors:  3
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755600402
+ Elapsed time:  16.932857137057
+ Number of processors:  6
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755628245
+ Elapsed time:  9.2815616420703
+ Number of processors:  12
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755603298
+ Elapsed time:  4.707326340954751
+ Number of processors:  24
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599689
+ Elapsed time:  2.421266331919469
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  4.869563963031396
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  4.1621187180280685
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  1.2435114609543234
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  0.6688613470178097
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  1.18402123299893
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  0.7039986599702388
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  1.231403841986321
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  0.6812230560462922
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  1.1734587710816413
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  0.6649784910259768
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  1.1802918440662324
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  0.650752178975381
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  1.2463906969642267
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  0.6691282099345699
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  1.20209553593304
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  0.653151293983683
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  1.1991562220500782
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  0.5980171079281718
+ Number of processors:  48
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755595191
+ Elapsed time:  1.213300981093198
+ Number of processors:  96
+ Number of terms in series:  100000000
+ Ending value of series:  0.6931471755599018
+ Elapsed time:  0.6549194939434528

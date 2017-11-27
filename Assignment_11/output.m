@@ -2,7 +2,7 @@ clear
 close all
 
 % set up for reading data
-fid = fopen('100k.out','r');
+fid = fopen('slurm-3726266.out','r');
 data = nan(8,2);
 data(:,1) = [1,2,3,6,12,24,48,96];
 
@@ -20,6 +20,8 @@ data(ix,2) = nanmin(data(ix,2),t);
 
 end
 
+%write data to table
+dlmwrite('data.txt',data,'delimiter','\t')
 
 
 % fit linear model in log-log
@@ -33,11 +35,10 @@ loglog(data(:,1),data(:,2),'.','MarkerSize',25)
 hold on
 loglog(x,y,'r:')
 xlim(10.^[-0.1,2.1])
-ylim(10.^[-3.1,-0.9])
+ylim(10.^[-0.4,1.8])
 xlabel('# of processors')
 ylabel('wall time (s)')
 title('Habanero test: n = 10^8')
-
 
 %write image file
 xdk.Units         = 'inches';
