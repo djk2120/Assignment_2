@@ -2,4 +2,10 @@
 
 ## Workflow
 
-### Hello
+### Create parameter files
+
+### Submit simulations
+
+### Analyze output data
+
+### Visualize results
