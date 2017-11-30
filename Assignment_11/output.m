@@ -8,16 +8,15 @@ data(:,1) = [1,2,3,6,12,24,48,96];
 
 % read data from std_out
 while ~feof(fid)
-a = strsplit(fgetl(fid));
-b = fgetl(fid);
-c = fgetl(fid);
-d = strsplit(fgetl(fid));
-
-np = str2double(a{end});
-t  = str2double(d{end});
-ix = data(:,1)==np;
-data(ix,2) = nanmin(data(ix,2),t);
-
+    a = strsplit(fgetl(fid));
+    b = fgetl(fid);
+    c = fgetl(fid);
+    d = strsplit(fgetl(fid));
+    
+    np = str2double(a{end});
+    t  = str2double(d{end});
+    ix = data(:,1)==np;
+    data(ix,2) = nanmin(data(ix,2),t);
 end
 
 %write data to table
