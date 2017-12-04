@@ -26,12 +26,7 @@
       - transpiration
       - photosynthesis
       - hydraulic redistribution
- 2) seasonal cycles
-      - transpiration
-      - photosynthesis
-      - hydraulic redistribution
-      - soil profile?
- 3) diurnal cycles
+ 2) diurnal cycles
       - transpiration
       - photosynthesis
 
