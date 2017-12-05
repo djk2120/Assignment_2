@@ -8,6 +8,10 @@
 
 ## Workflow
 
+ - ./submit_ens
+ - ensemble_analysis.m
+ - output.ipynb
+
 ### Create parameter files
  - matlab
  - each simulation needs a parameter file
