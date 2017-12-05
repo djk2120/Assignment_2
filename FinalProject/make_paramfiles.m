@@ -9,13 +9,11 @@
 %
 %    6^3 = 216 ensemble members in total.
 %    
-%    Dependencies: getvars.m, rc_ens/*.nc
+%    Dependencies: getvars.m, rc_ens/*.nc, k4g7.nc
 %
 %    ---------------------------------
 
-
-
-template = '/glade/u/home/djk2120/paramfiles/aug17/k4g7.nc';
+template = 'k4g7.nc';
 
 psi50 = ncread(template,'psi50');
 kmax  = ncread(template,'kmax');
@@ -26,10 +24,11 @@ xf = krmax(5,:)/kmax(5,1);
 for pval = 13:4:33
 for gval = 4:9
 for kval = 10:15:85 
-    newfile  = ['/glade/p/work/djk2120/clm4_5_16_r251/cime/scripts/rc_ens/paramfiles/',...
-               'k',num2str(kval),...
-               'g',num2str(gval),...
-               'p',num2str(pval),'.nc'];
+    %    newfile  = ['/glade/p/work/djk2120/clm4_5_16_r251/cime/scripts/rc_ens/paramfiles/',...
+    newfile = ['paramfiles/',...
+        'k',num2str(kval),...
+        'g',num2str(gval),...
+        'p',num2str(pval),'.nc'];
     disp(newfile)
     cmd = ['cp ',template,' ',newfile];
     system(cmd);

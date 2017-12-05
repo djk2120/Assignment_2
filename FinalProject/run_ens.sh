@@ -1,4 +1,8 @@
 #!/bin/bash
+#  loops through the parameter files
+#  setting up and submitting a simulation for each
+#  called by job script "submit_ens"
+#  n.b. not configured to run in this github
 
 base="rc_ens/BR-CAX_I1PTCLM50_r251e_"
 clone_case="BR-CAX_I1PTCLM50_r251_k4g7"
@@ -27,6 +31,6 @@ do
 	./case.submit
 	cd -
 	
-	sleep 30
+	sleep 30 #shared cluster
     fi
 done

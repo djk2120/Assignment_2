@@ -1,14 +1,17 @@
 #!/bin/tcsh
 
-#BSUB -P P93300041            # project code
+#BSUB -P P93300041           # project code
 #BSUB -W 06:00               # wall-clock time (hrs:mins)
 #BSUB -n 1                   # number of tasks in job         
 #BSUB -R "span[ptile=1]"     # run 1 task per node
-#BSUB -J j1                  # job name
-#BSUB -o j1.%J.out           # output file name in which %J is replaced by the job ID
-#BSUB -e j1.%J.err           # error file name in which %J is replaced by the job ID
+#BSUB -J submit_ens          # job name
+#BSUB -o submit_ens.%J.out   # output file name in which %J is replaced by the job ID
+#BSUB -e submit_ens.%J.err   # error file name in which %J is replaced by the job ID
 #BSUB -q caldera             # queue
 
-#run the executable
-#bash param.sh
+# this is the job submission script
+# creates the parameter files, then submits each simulation
+# n.b. not configured to run in this git
+ 
+bash param.sh
 bash run_ens.sh
