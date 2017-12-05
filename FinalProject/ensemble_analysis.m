@@ -13,8 +13,9 @@
 %
 %    Dependencies: getvars.m, rc_ens/*.nc
 %
-%    The input data for this script is located at dropbox.com, 
-%    contains 216 netcdf files
+%    The input data for this script is located at
+%    https://www.dropbox.com/s/am5td4bye99ojit/rc_ens.tar.gz
+%    2.6 GB, contains 216 netcdf files
 %    
 %    To extract:
 %    tar -xvzf rc_ens.tar.gz
